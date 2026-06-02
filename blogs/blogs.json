@@ -2,13 +2,13 @@
   "repo": "beamy",
   "feeds": [
     {
-      "source": "https://www.beamy.io/resources/blog/",
-      "feed_url": "",
+      "source": "https://www.beamy.io/product/",
+      "feed_url": "https://www.beamy.io/product/",
       "title": "",
       "saved": 0,
-      "error": "no_feed"
+      "method": "none"
     }
   ],
-  "fetched": "2026-05-17T20:48:52Z",
+  "fetched": "2026-06-01T23:35:02Z",
   "post_count": 0
 }
