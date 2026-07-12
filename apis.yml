@@ -42,6 +42,8 @@ apis:
         url: https://www.beamy.io
 
 common:
+  - type: DomainSecurity
+    url: security/beamy-domain-security.yml
   - type: Website
     url: https://www.beamy.io
   - type: Documentation
