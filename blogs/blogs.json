@@ -2,21 +2,14 @@
   "repo": "beamy",
   "feeds": [
     {
-      "source": "https://www.beamy.io/resources/blog/",
-      "feed_url": "",
-      "saved": 0,
-      "method": "agent-scrape",
-      "error": "blog redirects 301 to beamy.xyz; no dated posts on landing page; /blog/ 404"
-    },
-    {
       "source": "https://www.beamy.io/product/",
-      "feed_url": "",
+      "feed_url": "https://www.beamy.io/product/",
+      "title": "",
       "saved": 0,
-      "method": "agent-scrape",
-      "error": "product page, not a blog listing"
+      "method": "none"
     }
   ],
   "post_count": 0,
-  "fetched": "2026-06-27T12:27:51Z",
-  "agent_pulled": "2026-06-27"
+  "fetched": "2026-07-11T11:50:51Z",
+  "agent_pulled": "2026-07-04"
 }
