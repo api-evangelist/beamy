@@ -1,0 +1,620 @@
+generated: '2026-09-18'
+method: probed
+source: live GET of the closed well-known path list on every host the record knows (registrable domain + www on
+  both beamy.io and beamy.xyz, the docs, app, api, auth and status hosts, and the two prod API hosts named in the
+  app.beamy.io bundle)
+provider: Beamy
+providerId: beamy
+hit_count: 0
+soft_404_host: app.beamy.io
+soft_404_control:
+  url: https://app.beamy.io/.well-known/beamy-negative-control-9c4e1f.json
+  status: 200
+  content_type: text/html;charset=utf-8
+  bytes: 3747
+  note: Control probe of a path that cannot exist. app.beamy.io answers every path with this same 3,747-byte SPA
+    shell, so none of its 200s is a document.
+path_echo_control: passed (no host echoed the requested path into a document)
+summary:
+  hosts_probed: 11
+  paths_per_host: 15
+  provider_documents_found: 0
+  note: 'No Beamy-authored well-known document exists on any host. The single 200 (docs.beamy.io/.well-known/security.txt)
+    belongs to Intercom, the help-center vendor. No WellKnown or SecurityTxt pointer is emitted. The probe file
+    is deliberately unwired from apis.yml (pipeline rule: no pointer without a hit) and is registered in provenance.yml.'
+hosts:
+- host: beamy.io
+  note: Apex 301s every path to www.beamy.io, which 301s on to beamy.xyz — nothing is served here.
+  documents:
+  - path: /.well-known/security.txt
+    status: 301
+    redirect: https://www.beamy.io/.well-known/security.txt
+    content_type: text/plain
+  - path: /.well-known/openid-configuration
+    status: 301
+    redirect: https://www.beamy.io/.well-known/openid-configuration
+    content_type: text/plain
+  - path: /.well-known/oauth-authorization-server
+    status: 301
+    redirect: https://www.beamy.io/.well-known/oauth-authorization-server
+    content_type: text/plain
+  - path: /.well-known/oauth-protected-resource
+    status: 301
+    redirect: https://www.beamy.io/.well-known/oauth-protected-resource
+    content_type: text/plain
+  - path: /.well-known/api-catalog
+    status: 301
+    redirect: https://www.beamy.io/.well-known/api-catalog
+    content_type: text/plain
+  - path: /.well-known/api-catalog.json
+    status: 301
+    redirect: https://www.beamy.io/.well-known/api-catalog.json
+    content_type: text/plain
+  - path: /.well-known/ai-plugin.json
+    status: 301
+    redirect: https://www.beamy.io/.well-known/ai-plugin.json
+    content_type: text/plain
+  - path: /.well-known/ucp.json
+    status: 301
+    redirect: https://www.beamy.io/.well-known/ucp.json
+    content_type: text/plain
+  - path: /.well-known/acp.json
+    status: 301
+    redirect: https://www.beamy.io/.well-known/acp.json
+    content_type: text/plain
+  - path: /.well-known/aauth-resource.json
+    status: 301
+    redirect: https://www.beamy.io/.well-known/aauth-resource.json
+    content_type: text/plain
+  - path: /.well-known/apis.json
+    status: 301
+    redirect: https://www.beamy.io/.well-known/apis.json
+    content_type: text/plain
+  - path: /apis.json
+    status: 301
+    redirect: https://www.beamy.io/apis.json
+    content_type: text/plain
+  - path: /apis.yml
+    status: 301
+    redirect: https://www.beamy.io/apis.yml
+    content_type: text/plain
+  - path: /.well-known/agent-card.json
+    status: 301
+    redirect: https://www.beamy.io/.well-known/agent-card.json
+    content_type: text/plain
+  - path: /.well-known/agent.json
+    status: 301
+    redirect: https://www.beamy.io/.well-known/agent.json
+    content_type: text/plain
+- host: www.beamy.io
+  note: Every path 301s to https://beamy.xyz/ (home) — the old marketing host is a blanket redirect to the new domain.
+  documents:
+  - path: /.well-known/security.txt
+    status: 301
+    redirect: https://beamy.xyz/
+    content_type: text/plain
+  - path: /.well-known/openid-configuration
+    status: 301
+    redirect: https://beamy.xyz/
+    content_type: text/plain
+  - path: /.well-known/oauth-authorization-server
+    status: 301
+    redirect: https://beamy.xyz/
+    content_type: text/plain
+  - path: /.well-known/oauth-protected-resource
+    status: 301
+    redirect: https://beamy.xyz/
+    content_type: text/plain
+  - path: /.well-known/api-catalog
+    status: 301
+    redirect: https://beamy.xyz/
+    content_type: text/plain
+  - path: /.well-known/api-catalog.json
+    status: 301
+    redirect: https://beamy.xyz/
+    content_type: text/plain
+  - path: /.well-known/ai-plugin.json
+    status: 301
+    redirect: https://beamy.xyz/
+    content_type: text/plain
+  - path: /.well-known/ucp.json
+    status: 301
+    redirect: https://beamy.xyz/
+    content_type: text/plain
+  - path: /.well-known/acp.json
+    status: 301
+    redirect: https://beamy.xyz/
+    content_type: text/plain
+  - path: /.well-known/aauth-resource.json
+    status: 301
+    redirect: https://beamy.xyz/
+    content_type: text/plain
+  - path: /.well-known/apis.json
+    status: 301
+    redirect: https://beamy.xyz/
+    content_type: text/plain
+  - path: /apis.json
+    status: 301
+    redirect: https://beamy.xyz/
+    content_type: text/plain
+  - path: /apis.yml
+    status: 301
+    redirect: https://beamy.xyz/
+    content_type: text/plain
+  - path: /.well-known/agent-card.json
+    status: 301
+    redirect: https://beamy.xyz/
+    content_type: text/plain
+  - path: /.well-known/agent.json
+    status: 301
+    redirect: https://beamy.xyz/
+    content_type: text/plain
+- host: beamy.xyz
+  note: Webflow marketing site; every discovery path is a Webflow 404 page.
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    content_type: text/html
+  - path: /.well-known/openid-configuration
+    status: 404
+    content_type: text/html
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    content_type: text/html
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+    content_type: text/html
+  - path: /.well-known/api-catalog
+    status: 404
+    content_type: text/html
+  - path: /.well-known/api-catalog.json
+    status: 404
+    content_type: text/html
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    content_type: text/html
+  - path: /.well-known/ucp.json
+    status: 404
+    content_type: text/html
+  - path: /.well-known/acp.json
+    status: 404
+    content_type: text/html
+  - path: /.well-known/aauth-resource.json
+    status: 404
+    content_type: text/html
+  - path: /.well-known/apis.json
+    status: 404
+    content_type: text/html
+  - path: /apis.json
+    status: 404
+    content_type: text/html
+  - path: /apis.yml
+    status: 404
+    content_type: text/html
+  - path: /.well-known/agent-card.json
+    status: 404
+    content_type: text/html
+  - path: /.well-known/agent.json
+    status: 404
+    content_type: text/html
+- host: www.beamy.xyz
+  note: Alias of beamy.xyz; same Webflow 404 on every path.
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    content_type: text/html
+  - path: /.well-known/openid-configuration
+    status: 404
+    content_type: text/html
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    content_type: text/html
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+    content_type: text/html
+  - path: /.well-known/api-catalog
+    status: 404
+    content_type: text/html
+  - path: /.well-known/api-catalog.json
+    status: 404
+    content_type: text/html
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    content_type: text/html
+  - path: /.well-known/ucp.json
+    status: 404
+    content_type: text/html
+  - path: /.well-known/acp.json
+    status: 404
+    content_type: text/html
+  - path: /.well-known/aauth-resource.json
+    status: 404
+    content_type: text/html
+  - path: /.well-known/apis.json
+    status: 404
+    content_type: text/html
+  - path: /apis.json
+    status: 404
+    content_type: text/html
+  - path: /apis.yml
+    status: 404
+    content_type: text/html
+  - path: /.well-known/agent-card.json
+    status: 404
+    content_type: text/html
+  - path: /.well-known/agent.json
+    status: 404
+    content_type: text/html
+- host: docs.beamy.io
+  note: 'Intercom help center (CNAME eu.intercomhelpcenter.com). The one 200, /.well-known/security.txt, is Intercom''s
+    own file (Canonical: https://app.intercom.com/.well-known/security.txt, Contact: security@intercom.com) and
+    is NOT a Beamy document — recorded, not credited.'
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    file: beamy-intercom-security.txt
+    owner: intercom
+    note: Served by Intercom for its help-center platform, not by Beamy; no SecurityTxt pointer.
+    content_type: text/plain
+  - path: /.well-known/openid-configuration
+    status: 404
+    content_type: text/html
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    content_type: text/html
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+    content_type: text/html
+  - path: /.well-known/api-catalog
+    status: 404
+    content_type: text/html
+  - path: /.well-known/api-catalog.json
+    status: 404
+    content_type: text/html
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    content_type: text/html
+  - path: /.well-known/ucp.json
+    status: 404
+    content_type: text/html
+  - path: /.well-known/acp.json
+    status: 404
+    content_type: text/html
+  - path: /.well-known/aauth-resource.json
+    status: 404
+    content_type: text/html
+  - path: /.well-known/apis.json
+    status: 404
+    content_type: text/html
+  - path: /apis.json
+    status: 404
+    content_type: text/html
+  - path: /apis.yml
+    status: 404
+    content_type: text/html
+  - path: /.well-known/agent-card.json
+    status: 404
+    content_type: text/html
+  - path: /.well-known/agent.json
+    status: 404
+    content_type: text/html
+- host: app.beamy.io
+  note: 'Single-page app: every path 200s the same 3,747-byte HTML shell (text/html). Not documents — treated as
+    misses.'
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    note: HTML SPA shell, not a document
+    content_type: text/html
+  - path: /.well-known/openid-configuration
+    status: 200
+    note: HTML SPA shell, not a document
+    content_type: text/html
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    note: HTML SPA shell, not a document
+    content_type: text/html
+  - path: /.well-known/oauth-protected-resource
+    status: 200
+    note: HTML SPA shell, not a document
+    content_type: text/html
+  - path: /.well-known/api-catalog
+    status: 200
+    note: HTML SPA shell, not a document
+    content_type: text/html
+  - path: /.well-known/api-catalog.json
+    status: 200
+    note: HTML SPA shell, not a document
+    content_type: text/html
+  - path: /.well-known/ai-plugin.json
+    status: 200
+    note: HTML SPA shell, not a document
+    content_type: text/html
+  - path: /.well-known/ucp.json
+    status: 200
+    note: HTML SPA shell, not a document
+    content_type: text/html
+  - path: /.well-known/acp.json
+    status: 200
+    note: HTML SPA shell, not a document
+    content_type: text/html
+  - path: /.well-known/aauth-resource.json
+    status: 200
+    note: HTML SPA shell, not a document
+    content_type: text/html
+  - path: /.well-known/apis.json
+    status: 200
+    note: HTML SPA shell, not a document
+    content_type: text/html
+  - path: /apis.json
+    status: 200
+    note: HTML SPA shell, not a document
+    content_type: text/html
+  - path: /apis.yml
+    status: 200
+    note: HTML SPA shell, not a document
+    content_type: text/html
+  - path: /.well-known/agent-card.json
+    status: 200
+    note: HTML SPA shell, not a document
+    content_type: text/html
+  - path: /.well-known/agent.json
+    status: 200
+    note: HTML SPA shell, not a document
+    content_type: text/html
+- host: api.beamy.io
+  note: 'Kong 3.9.3 gateway with key-auth on every path: 401 {message: ''No API key found in request''}, WWW-Authenticate:
+    Key. Discovery documents, if any, sit behind the key.'
+  documents:
+  - path: /.well-known/security.txt
+    status: 401
+    content_type: application/json
+  - path: /.well-known/openid-configuration
+    status: 401
+    content_type: application/json
+  - path: /.well-known/oauth-authorization-server
+    status: 401
+    content_type: application/json
+  - path: /.well-known/oauth-protected-resource
+    status: 401
+    content_type: application/json
+  - path: /.well-known/api-catalog
+    status: 401
+    content_type: application/json
+  - path: /.well-known/api-catalog.json
+    status: 401
+    content_type: application/json
+  - path: /.well-known/ai-plugin.json
+    status: 401
+    content_type: application/json
+  - path: /.well-known/ucp.json
+    status: 401
+    content_type: application/json
+  - path: /.well-known/acp.json
+    status: 401
+    content_type: application/json
+  - path: /.well-known/aauth-resource.json
+    status: 401
+    content_type: application/json
+  - path: /.well-known/apis.json
+    status: 401
+    content_type: application/json
+  - path: /apis.json
+    status: 401
+    content_type: application/json
+  - path: /apis.yml
+    status: 401
+    content_type: application/json
+  - path: /.well-known/agent-card.json
+    status: 401
+    content_type: application/json
+  - path: /.well-known/agent.json
+    status: 401
+    content_type: application/json
+- host: auth.beamy.io
+  note: Firebase-hosted login page; 404 on every discovery path (JSON 404s from the Firebase hosting layer).
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    content_type: text/html
+  - path: /.well-known/openid-configuration
+    status: 404
+    content_type: text/html
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    content_type: text/html
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+    content_type: text/html
+  - path: /.well-known/api-catalog
+    status: 404
+    content_type: text/html
+  - path: /.well-known/api-catalog.json
+    status: 404
+    content_type: application/json
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    content_type: application/json
+  - path: /.well-known/ucp.json
+    status: 404
+    content_type: application/json
+  - path: /.well-known/acp.json
+    status: 404
+    content_type: application/json
+  - path: /.well-known/aauth-resource.json
+    status: 404
+    content_type: application/json
+  - path: /.well-known/apis.json
+    status: 404
+    content_type: application/json
+  - path: /apis.json
+    status: 404
+    content_type: application/json
+  - path: /apis.yml
+    status: 404
+    content_type: text/html
+  - path: /.well-known/agent-card.json
+    status: 404
+    content_type: application/json
+  - path: /.well-known/agent.json
+    status: 404
+    content_type: application/json
+- host: status.beamy.io
+  note: Better Uptime status page (CNAME statuspage.betteruptime.com); every path 301s to /.
+  documents:
+  - path: /.well-known/security.txt
+    status: 301
+    redirect: https://status.beamy.io/
+    content_type: text/html
+  - path: /.well-known/openid-configuration
+    status: 301
+    redirect: https://status.beamy.io/
+    content_type: text/html
+  - path: /.well-known/oauth-authorization-server
+    status: 301
+    redirect: https://status.beamy.io/
+    content_type: text/html
+  - path: /.well-known/oauth-protected-resource
+    status: 301
+    redirect: https://status.beamy.io/
+    content_type: text/html
+  - path: /.well-known/api-catalog
+    status: 301
+    redirect: https://status.beamy.io/
+    content_type: text/html
+  - path: /.well-known/api-catalog.json
+    status: 301
+    redirect: https://status.beamy.io/
+    content_type: text/html
+  - path: /.well-known/ai-plugin.json
+    status: 301
+    redirect: https://status.beamy.io/
+    content_type: text/html
+  - path: /.well-known/ucp.json
+    status: 301
+    redirect: https://status.beamy.io/
+    content_type: text/html
+  - path: /.well-known/acp.json
+    status: 301
+    redirect: https://status.beamy.io/
+    content_type: text/html
+  - path: /.well-known/aauth-resource.json
+    status: 301
+    redirect: https://status.beamy.io/
+    content_type: text/html
+  - path: /.well-known/apis.json
+    status: 301
+    redirect: https://status.beamy.io/
+    content_type: text/html
+  - path: /apis.json
+    status: 301
+    redirect: https://status.beamy.io/
+    content_type: text/html
+  - path: /apis.yml
+    status: 301
+    redirect: https://status.beamy.io/
+    content_type: text/html
+  - path: /.well-known/agent-card.json
+    status: 301
+    redirect: https://status.beamy.io/
+    content_type: text/html
+  - path: /.well-known/agent.json
+    status: 301
+    redirect: https://status.beamy.io/
+    content_type: text/html
+- host: clientapi.prod.beamy.io
+  note: Internal client API named in the app bundle; 401 {statusCode:401, message:'TOKEN_EMPTY'} on every path.
+  documents:
+  - path: /.well-known/security.txt
+    status: 401
+    content_type: application/json
+  - path: /.well-known/openid-configuration
+    status: 401
+    content_type: application/json
+  - path: /.well-known/oauth-authorization-server
+    status: 401
+    content_type: application/json
+  - path: /.well-known/oauth-protected-resource
+    status: 401
+    content_type: application/json
+  - path: /.well-known/api-catalog
+    status: 401
+    content_type: application/json
+  - path: /.well-known/api-catalog.json
+    status: 401
+    content_type: application/json
+  - path: /.well-known/ai-plugin.json
+    status: 401
+    content_type: application/json
+  - path: /.well-known/ucp.json
+    status: 401
+    content_type: application/json
+  - path: /.well-known/acp.json
+    status: 401
+    content_type: application/json
+  - path: /.well-known/aauth-resource.json
+    status: 401
+    content_type: application/json
+  - path: /.well-known/apis.json
+    status: 401
+    content_type: application/json
+  - path: /apis.json
+    status: 401
+    content_type: application/json
+  - path: /apis.yml
+    status: 401
+    content_type: application/json
+  - path: /.well-known/agent-card.json
+    status: 401
+    content_type: application/json
+  - path: /.well-known/agent.json
+    status: 401
+    content_type: application/json
+- host: wbeapi-ops.prod.beamy.io
+  note: Internal ops API named in the app bundle; 400 on every path.
+  documents:
+  - path: /.well-known/security.txt
+    status: 400
+    content_type: application/json
+  - path: /.well-known/openid-configuration
+    status: 400
+    content_type: application/json
+  - path: /.well-known/oauth-authorization-server
+    status: 400
+    content_type: application/json
+  - path: /.well-known/oauth-protected-resource
+    status: 400
+    content_type: application/json
+  - path: /.well-known/api-catalog
+    status: 400
+    content_type: application/json
+  - path: /.well-known/api-catalog.json
+    status: 400
+    content_type: application/json
+  - path: /.well-known/ai-plugin.json
+    status: 400
+    content_type: application/json
+  - path: /.well-known/ucp.json
+    status: 400
+    content_type: application/json
+  - path: /.well-known/acp.json
+    status: 400
+    content_type: application/json
+  - path: /.well-known/aauth-resource.json
+    status: 400
+    content_type: application/json
+  - path: /.well-known/apis.json
+    status: 400
+    content_type: application/json
+  - path: /apis.json
+    status: 400
+    content_type: application/json
+  - path: /apis.yml
+    status: 400
+    content_type: application/json
+  - path: /.well-known/agent-card.json
+    status: 400
+    content_type: application/json
+  - path: /.well-known/agent.json
+    status: 400
+    content_type: application/json

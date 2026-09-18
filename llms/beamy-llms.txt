@@ -1,0 +1,71 @@
+# Beamy
+
+> Enterprise application-portfolio and usage-intelligence platform from Beamy SAS (Lille and
+> Paris, France). It started as SaaS discovery and governance — browser-extension detection of
+> shadow IT, SSO/ITSM integrations, spend and license tracking — and now positions itself as an
+> AI-driven business transformation platform that models people, processes and applications from
+> real usage so IT, finance and transformation leaders can rationalize the stack, negotiate
+> renewals on actual consumption and prioritize where to deploy AI. Named customers: Veolia,
+> Stellantis, Decathlon, Danske Bank, Equans. Sold through a demo request; no self-service.
+
+<!--
+  generated: 2026-09-18
+  method: generated
+  source: apis.yml + repo artifacts + live probes.
+     Beamy publishes no llms.txt: beamy.xyz/llms.txt 404, docs.beamy.io/llms.txt 404,
+     app.beamy.io/llms.txt is the SPA shell. -->
+
+## Read this first: the API is not publicly documented
+
+Beamy's API host, https://api.beamy.io, is a Kong 3.9.3 gateway that answers HTTP 401
+`{"message":"No API key found in request"}` with `WWW-Authenticate: Key` on every path — real or
+not — so a 401 tells you nothing about whether a path exists. Do not guess endpoint paths. As of
+2026-09-18 there is no published OpenAPI, AsyncAPI, GraphQL SDL, WSDL, Protobuf, MCP server,
+agent card, SDK, CLI or llms.txt.
+
+The help center at https://docs.beamy.io/en/ has three access tiers: visitors see ten public
+articles (roles and permissions, views, product/people/tech sheets, segments, smart privacy);
+"implementation documentation" is released after a lead form (email, name, company) in the
+site's chat widget; the full library requires a Beamy customer login.
+
+If you are an agent asked to call the Beamy API: you cannot, without an API key issued to a
+Beamy customer. The parameter name the key is sent in is not published.
+
+## Where things are
+
+- Website: https://beamy.xyz (www.beamy.io and beamy.io both 301 here; same legal entity, Beamy SAS)
+- Help center (public tier): https://docs.beamy.io/en/
+- How the documentation tiers work: https://docs.beamy.io/en/articles/304306-how-to-access-beamy-s-documentation
+- Product login: https://app.beamy.io/
+- Status page (Better Uptime; lists Web Extension and Extension Observability only, no API component): https://status.beamy.io/
+- Demo request: https://beamy.xyz/book-a-demo
+- Privacy policy: https://beamy.xyz/privacy-policy
+- Legal notices (Beamy SAS, RCS Lille, contact support@beamy.io): https://beamy.xyz/legal-notices
+
+## What is NOT published (checked 2026-09-18)
+
+- Pricing: none — https://beamy.xyz/pricing 404; demo-only motion.
+- Rate limits: none published; no RateLimit-* or Retry-After headers on anonymous responses.
+- Versioning, deprecation or sunset policy: none public.
+- SLA: none public.
+- Changelog: none public.
+- Security.txt: none on any Beamy host (docs.beamy.io serves Intercom's own file, not Beamy's).
+- OpenID / OAuth discovery: 404 on auth.beamy.io (a Firebase login page), key-gated on api.beamy.io.
+- Vulnerability disclosure program or trust center: none found.
+- Public GitHub organization: github.com/beamy exists but is empty and unattributed.
+
+## Machine-readable artifacts in this profile
+
+- apis.yml — the APIs.json index for this provider
+- authentication/beamy-authentication.yml — probed auth profile (Kong key-auth on api.beamy.io)
+- lifecycle/beamy-lifecycle.yml — status page, absence of deprecation/SLA/changelog
+- plans/beamy-plans-pricing.yml — plan_count 0, searched
+- rate-limits/beamy-rate-limits.yml — limit_count 0, probed
+- well-known/beamy-well-known.yml — 11 hosts x 15 discovery paths, no provider document
+- security/beamy-domain-security.yml — TLS/HSTS/DNSSEC/SPF/DMARC for beamy.io
+
+## About this profile
+
+Independent third-party profile by API Evangelist (https://apievangelist.com), assembled only
+from what a member of the public can reach without credentials. Not affiliated with Beamy.
+Corrections and removal: info@apievangelist.com.

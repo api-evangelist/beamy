@@ -1,0 +1,61 @@
+generated: '2026-09-18'
+method: probed
+source:
+- https://api.beamy.io/
+- https://clientapi.prod.beamy.io/
+- https://app.beamy.io/
+- https://auth.beamy.io/
+provider: Beamy
+providerId: beamy
+description: >-
+  Authentication profile observed at the edge. Beamy publishes no OpenAPI and no public auth
+  reference, so this records only what the hosts themselves assert to an anonymous caller.
+schemes:
+- id: kong-key-auth
+  type: apiKey
+  host: api.beamy.io
+  observed:
+    status: 401
+    www_authenticate: Key
+    body: '{"message":"No API key found in request","request_id":"..."}'
+    server: kong/3.9.3
+  detail: >-
+    Kong's key-auth plugin fronts every path on api.beamy.io. The plugin accepts the key in a
+    header or query parameter whose name is configured per gateway; Beamy does not publish which
+    name it uses, so the parameter name is recorded as unknown rather than assumed.
+  key_parameter: unknown
+  key_location: unknown
+  self_service_keys: false
+  docs: null
+- id: bearer-token
+  type: http
+  scheme: bearer
+  host: clientapi.prod.beamy.io
+  observed:
+    status: 401
+    body: '{"statusCode":401,"message":"TOKEN_EMPTY"}'
+  detail: >-
+    Internal client API called by the app.beamy.io single-page app; TOKEN_EMPTY indicates a bearer
+    token issued by the app's login flow (auth.beamy.io is a Firebase-hosted login page). Not a
+    public integration surface.
+oauth2: null
+openid_configuration: null
+mutual_tls: false
+sso:
+  detail: >-
+    The product integrates with Okta and Azure AD for SSO (apis.yml Integrations); the identity
+    provider metadata is not published on any Beamy host — /.well-known/openid-configuration 404s
+    on auth.beamy.io and is key-gated on api.beamy.io.
+how_to_get_credentials: >-
+  No public path. Keys are issued to customers; the implementation documentation is behind the
+  docs.beamy.io lead form (email, name, company) and the full library behind a Beamy account.
+x-evidence:
+- url: https://api.beamy.io/
+  http_status: 401
+  fetched: '2026-09-18'
+- url: https://clientapi.prod.beamy.io/
+  http_status: 401
+  fetched: '2026-09-18'
+- url: https://auth.beamy.io/.well-known/openid-configuration
+  http_status: 404
+  fetched: '2026-09-18'

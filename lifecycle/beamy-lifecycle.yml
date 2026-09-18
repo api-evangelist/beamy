@@ -1,0 +1,69 @@
+generated: '2026-09-18'
+method: probed
+source:
+- https://status.beamy.io/
+- https://docs.beamy.io/en/
+- https://beamy.xyz/
+provider: Beamy
+providerId: beamy
+versioning:
+- surface: api.beamy.io
+  scheme: unknown
+  current: null
+  detail: >-
+    api.beamy.io is a Kong 3.9.3 gateway that answers 401 on every path without an API key, so no
+    version prefix, header or policy can be observed from outside. No published versioning policy
+    exists on any public Beamy page.
+deprecation:
+  policy_url: null
+  published: false
+  sunset_header: unknown
+  detail: >-
+    No deprecation or sunset policy is published. The implementation documentation that might carry
+    one is behind the docs.beamy.io lead/customer gate. No Deprecation pointer is emitted.
+sla:
+  url: null
+  uptime_target: null
+  published: false
+  detail: >-
+    No SLA is published on beamy.xyz or in the public tier of docs.beamy.io. The status page reports
+    100% uptime on its Extension Observability monitor but that is a measurement, not a commitment.
+status_page:
+  url: https://status.beamy.io/
+  published: true
+  vendor: Better Uptime (CNAME statuspage.betteruptime.com)
+  title: Beamy status
+  components:
+  - name: Web Extension
+    status_observed: Operational
+  - name: Extension Observability
+    status_observed: Operational
+    uptime_shown: 100%
+  sections:
+  - Status
+  - Maintenance
+  - Previous incidents
+  - Get in touch
+  linked_from: https://docs.beamy.io/en/ (top-bar "Status" link)
+  detail: >-
+    A first-party status page for the browser-extension surface only; no API component is listed.
+    StatusPage pointer emitted.
+changelog:
+  url: null
+  published: false
+  detail: >-
+    No dated public changelog. beamy.xyz is a four-page Webflow site (home, book-a-demo, legal-notices,
+    privacy-policy) and the help center's public tier has no release-notes collection. No ChangeLog
+    pointer or changelog/ artifact is emitted.
+deprecated_operations: []
+deprecated_operations_note: No OpenAPI exists; the API is key-gated at the edge.
+x-evidence:
+- url: https://status.beamy.io/
+  http_status: 200
+  fetched: '2026-09-18'
+- url: https://api.beamy.io/
+  http_status: 401
+  fetched: '2026-09-18'
+- url: https://beamy.xyz/pricing
+  http_status: 404
+  fetched: '2026-09-18'
