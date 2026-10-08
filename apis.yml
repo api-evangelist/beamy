@@ -70,6 +70,8 @@ apis:
     url: authentication/beamy-authentication.yml
   baseURL: https://api.beamy.io
 common:
+- type: FinOps
+  url: finops/beamy-finops.yml
 - type: Website
   url: https://beamy.xyz
 - type: Documentation
