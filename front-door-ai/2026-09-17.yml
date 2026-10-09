@@ -7,14 +7,17 @@ front_door_ai:
   probed_at: '2026-09-17'
   host: www.beamy.io
   final_host: beamy.xyz
-  ownership: own
+  ownership: inherited
   owner: beamy
   shares_host_with: null
-  inherited_from: null
+  inherited_from: beamy.xyz
+  alias_of: null
   verdict: scored
-  score: 15
+  score: null
+  band: null
+  band_label: null
   host_score: 15
-  density: 22.52
+  density: null
   words: 666
   tiers:
     agentic: 2
