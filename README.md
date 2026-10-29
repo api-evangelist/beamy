@@ -1,4 +1,4 @@
-# Beamy (beamy)
+# Beamy
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,77 +64,105 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Beamy is a SaaS discovery and governance platform that helps organizations identify unauthorized cloud applications (shadow IT), manage their SaaS portfolio, track spending, enforce security policies, and ensure compliance. Beamy uses browser extension-based detection and integrates with SSO, expense management, and ITSM systems to provide comprehensive SaaS visibility and control. The platform serves IT, security, and procurement teams seeking to reduce SaaS sprawl and govern their cloud application landscape.
+Beamy is an enterprise application-portfolio and usage-intelligence platform from Beamy SAS (Lille and Paris, France). It began as a SaaS discovery and governance product — browser-extension detection of shadow IT, SSO and ITSM integrations, spend and license tracking, security and compliance policy — and now positions itself as an AI-driven business transformation platform: modelling people, processes and applications from real usage signals so IT, finance and transformation leaders can rationalize their stack, negotiate renewals on actual consumption, and prioritize where to deploy AI. Sold to large enterprises (Veolia, Stellantis, Decathlon, Danske Bank, Equans) through a demo-request motion; its API sits behind a key-gated Kong gateway and its implementation documentation behind a lead form.
 
-**URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/beamy/refs/heads/main/apis.yml)
+**Areas:** SaaS Management · Shadow IT · IT Asset Management · Cloud Governance · Security · Application Portfolio Management · Usage Analytics · AI Governance
 
-**Run:** [Capabilities Using Naftiko](https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=company-api-evangelist&utm_content=repo)
+## Beamy on APIs.io
 
-## Tags:
+Everything profiled for Beamy is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/beamy/](https://apis.io/providers/beamy/)** — or go straight to one of the APIs or properties below.
 
- - SaaS Management, Shadow IT, IT Asset Management, Cloud Governance, Security
+### APIs (1)
 
-## Timestamps
+- [Beamy SaaS Management Platform](https://apis.io/apis/beamy/beamy/) — Beamy's platform surface: browser-extension usage discovery, SSO-correlated identity, application and people sheets, segments, roles and permissions, and…
 
-- **Created:** 2026-03-27
-- **Modified:** 2026-04-19
+### Published properties
 
-## APIs
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-### Beamy SaaS Management Platform
-Beamy provides a SaaS governance platform with browser extension-based discovery, SSO integration, spend analytics, user lifecycle management, and compliance reporting. Organizations use Beamy to achieve full visibility into their SaaS landscape, manage vendor relationships, and enforce security policies for cloud applications.
+#### Security (2)
 
-**Human URL:** [https://www.beamy.io](https://www.beamy.io)
+Authentication, trust centre, and vulnerability disclosure.
 
-#### Tags:
+- [Beamy Authentication](https://apis.io/security/beamy/beamy-authentication/)
+- [Beamy Domain Security](https://apis.io/security/beamy/beamy-domain-security/)
 
- - SaaS Management, Shadow IT, IT Asset Management
+#### Plans and pricing (1)
 
-#### Properties
+Published plans, tiers and prices.
 
-- [Documentation](https://www.beamy.io/product/)
-- [Website](https://www.beamy.io)
+- [Beamy Plans Pricing](https://apis.io/plans/beamy/beamy-plans-pricing/)
 
-## Common Properties
+#### Rate limits (1)
 
-- [Website](https://www.beamy.io)
-- [Documentation](https://www.beamy.io/product/)
-- [Blog](https://www.beamy.io/resources/blog/)
-- [PrivacyPolicy](https://www.beamy.io/privacy-policy/)
+Published request limits.
 
-## Features
+- [Beamy Rate Limits](https://apis.io/rate-limits/beamy/beamy-rate-limits/)
 
-| Name | Description |
-|------|-------------|
-| SaaS Discovery | Browser extension-based discovery of all SaaS applications used across the organization, including shadow IT. |
-| Shadow IT Monitoring | Continuous monitoring to detect unauthorized applications and provide risk assessments for ungoverned SaaS. |
-| Spend Management | Track and optimize SaaS spending across all applications with license utilization and renewal management. |
-| User Lifecycle Management | Manage user access to SaaS applications throughout the employee lifecycle from onboarding to offboarding. |
-| Security and Compliance | Assess SaaS security posture, identify risky applications, and enforce compliance with corporate policies. |
-| SSO Integration | Integration with SSO providers to correlate SaaS usage with identity management and access controls. |
+#### FinOps (1)
 
-## Use Cases
+What the API costs to run, by operation.
 
-| Name | Description |
-|------|-------------|
-| Shadow IT Elimination | Discover and govern unauthorized cloud applications used by employees outside IT approval processes. |
-| SaaS Cost Optimization | Identify unused licenses, duplicate tools, and overspending to reduce overall SaaS costs. |
-| Security Risk Reduction | Assess and mitigate security risks from unapproved or high-risk SaaS applications. |
-| Compliance Reporting | Generate compliance reports showing which applications are approved, their data handling policies, and user access. |
-| Vendor Management | Centralize SaaS vendor relationships, contract renewals, and negotiation data in one platform. |
+- [Beamy Finops](https://apis.io/finops/beamy/beamy-finops/)
 
-## Integrations
+## Where to find this API
 
-| Name | Description |
-|------|-------------|
-| Okta | SSO and identity integration for correlating SaaS usage with user identity and access management. |
-| Azure AD | Microsoft Azure Active Directory integration for SaaS user provisioning and access governance. |
-| Slack | Notification integration for alerting IT teams about new shadow IT discoveries and policy violations. |
-| ServiceNow | ITSM integration for creating and managing SaaS application requests and approvals through ServiceNow. |
-| Expensify | Expense management integration to identify and track SaaS purchases made via employee credit cards. |
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
-## Maintainers
+- [Website](https://beamy.xyz)
+- [Documentation](https://docs.beamy.io/en/)
+- [Privacy policy](https://beamy.xyz/privacy-policy)
+- [Status](https://status.beamy.io/)
 
-**FN:** Kin Lane
+## API Evangelist rating
 
-**Email:** kin@apievangelist.com
+**Kin Score 17.1** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 7.9 |
+| Developer ergonomics | 26.2 |
+| Access clarity | 17.1 |
+
+**Agent readiness 5.0** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 15.7** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/beamy/](https://apis.io/providers/beamy/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Beamy: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/beamy/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
